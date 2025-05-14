@@ -1,0 +1,98 @@
+
+:root {
+  --bg-color: #fafafa;
+  --text-color: #333;
+  --header-bg: #1e1e1e;
+  --header-text: white;
+  --photo-bg: #ffffff;
+  --footer-bg: #1e1e1e;
+  --footer-text: #ccc;
+}
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --header-bg: #333;
+  --header-text: #fff;
+  --photo-bg: #1e1e1e;
+  --footer-bg: #222;
+  --footer-text: #aaa;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 2rem;
+  text-align: center;
+}
+.top-bar {
+  margin-top: 1rem;
+}
+.top-bar input {
+  padding: 0.5rem;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+.top-bar button {
+  padding: 0.5rem;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.about {
+  padding: 1rem 2rem;
+  background-color: #f0f0f0;
+  color: #000;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.photo {
+  background-color: var(--photo-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.photo img {
+  width: 100%;
+  border-radius: 8px;
+}
+.photo .details {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.photo .title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.photo .description {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+.photo textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+}
