@@ -23,76 +23,59 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-header {
+header, footer {
   background-color: var(--header-bg);
   color: var(--header-text);
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 .top-bar {
   margin-top: 1rem;
 }
-.top-bar input {
+.top-bar input, .top-bar button {
   padding: 0.5rem;
-  width: 200px;
+  margin: 0.2rem;
   border-radius: 5px;
   border: none;
-}
-.top-bar button {
-  padding: 0.5rem;
-  margin-left: 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-}
-.about {
-  padding: 1rem 2rem;
-  background-color: #f0f0f0;
-  color: #000;
 }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 1rem;
+  padding: 1rem;
 }
 .photo {
   background-color: var(--photo-bg);
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .photo img {
   width: 100%;
   border-radius: 8px;
 }
-.photo .details {
+.details {
   margin-top: 0.5rem;
   text-align: center;
 }
-.photo .title {
-  font-weight: bold;
-  font-size: 1.1rem;
+.feedback, .about {
+  padding: 1rem 2rem;
 }
-.photo .description {
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-  color: var(--text-color);
-}
-.photo textarea {
+.feedback textarea, .feedback input {
   width: 100%;
-  margin-top: 0.5rem;
   padding: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  margin-top: 0.5rem;
 }
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--footer-bg);
-  color: var(--footer-text);
+.feedback button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.admin {
+  padding: 2rem;
+}
+#photoList li {
+  margin: 0.5rem 0;
+}
+#photoList button {
+  margin-left: 1rem;
 }
