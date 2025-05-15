@@ -1,10 +1,25 @@
+if (localStorage.getItem("isAdmin") !== "true") {
+  alert("Access denied.");
+  window.location.href = "login.html";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-  let count = localStorage.getItem("visitCount") || 0;
-  count++;
-  localStorage.setItem("visitCount", count);
-  document.getElementById("visitCount").textContent = count;
+  // Chart: visitor count
+  let count = parseInt(localStorage.getItem("visitCount") || "0");
+  const ctx = document.getElementById('visitorChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["Visits"],
+      datasets: [{
+        label: 'Number of Visits',
+        data: [count],
+        backgroundColor: ['rgba(54, 162, 235, 0.7)'],
+      }]
+    }
+  });
 
+  // Photo manager
   let photos = JSON.parse(localStorage.getItem("photos") || "[]");
   const list = document.getElementById("photoList");
   const render = () => {
@@ -24,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
   window.addPhoto = () => {
-    const input = document.getElementById("newImage");
+    const input = document.getElementById("photoName");
     if (input.value) {
       photos.push(input.value);
       localStorage.setItem("photos", JSON.stringify(photos));
@@ -33,4 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
   render();
+
+  // Feedback viewer
+  const feedback = JSON.parse(localStorage.getItem("feedback") || "[]");
+  const feedbackList = document.getElementById("feedbackList");
+  feedbackList.innerHTML = feedback.map(f => 
+    `<li><strong>${f.user}:</strong> ${f.comment}</li>`
+  ).join('');
 });
