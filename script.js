@@ -12,3 +12,13 @@ document.getElementById('search').addEventListener('input', function () {
     photo.style.display = name.includes(query) ? 'block' : 'none';
   });
 });
+document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const user = document.getElementById('user').value;
+  const comment = document.getElementById('comment').value;
+  const feedback = JSON.parse(localStorage.getItem('feedback') || '[]');
+  feedback.push({ user, comment });
+  localStorage.setItem('feedback', JSON.stringify(feedback));
+  alert('Thanks for your feedback!');
+  this.reset();
+});
