@@ -80,11 +80,55 @@ body {
 }
 .site-footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px 20px;
   background-color: #333;
   color: #fff;
 }
 .site-footer a {
   color: #e0b589;
   text-decoration: none;
+}
+.admin-login {
+  margin-top: 30px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form input {
+  margin: 5px 0;
+  padding: 8px;
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+}
+.login-form button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: #e0b589;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.feedback-log {
+  margin-top: 30px;
+  text-align: left;
+  background: #444;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.feedback-log h2 {
+  color: #fff;
+}
+.feedback-log ul {
+  list-style-type: none;
+  padding: 0;
+  color: #ddd;
+}
+.feedback-log li {
+  margin-bottom: 10px;
 }
